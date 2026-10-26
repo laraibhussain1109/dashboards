@@ -37,3 +37,9 @@ Workspace checks exercise duplication, confirmed deletion, cancel/focus behavior
 - OCR for scanned PDFs, a private-Google OAuth UI/scheduler, cross-dataset joins, and specialized unregistered chart forms remain outside the current implementation. See README for precise limits.
 
 Saving cloud configuration does not publish its snapshot or deploy the application externally. This record describes current-instance validation and the saved installation/startup steps, not a restored future task or an external production deployment.
+
+## Stavatech brand refresh
+
+The product identity is now **Stavatech Prism Dashboard**. A shared brand component applies the engraved-S prism artwork and stacked wordmark to the workspace, editor and published views; the browser title and favicon use the same identity. Existing persistence keys and configuration variable names remain compatible.
+
+The TypeScript/Vite build and Django system check passed. Browser visual checks verified the full accessible product name, loaded logo/favicon, sidebar wordmark sizing, mobile navigation, editor toolbar spacing, public header/footer at 1440/390/320 pixels, and dark-theme contrast with no page errors. A production-build upload-to-publish journey was rerun after the refresh.

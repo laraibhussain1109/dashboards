@@ -538,4 +538,4 @@ def app_shell(request, path=''):
     index = settings.FRONTEND_DIST / 'index.html'
     if index.is_file():
         return FileResponse(index.open('rb'), content_type='text/html')
-    return HttpResponse('Prism frontend has not been built. Run npm install and npm run build in frontend/, or use the Vite development server.', status=503, content_type='text/plain')
+    return HttpResponse('Stavatech Prism Dashboard frontend has not been built. Run npm install and npm run build in frontend/, or use the Vite development server.', status=503, content_type='text/plain')

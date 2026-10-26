@@ -1,4 +1,4 @@
-# Prism JSON API
+# Stavatech Prism Dashboard JSON API
 
 All API URLs have a trailing slash. The React application uses same-origin requests. Vite proxies `/api/` during development; Django serves `frontend/dist` in a built installation.
 

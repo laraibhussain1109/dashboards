@@ -1,5 +1,5 @@
 # Implementation contract
-Product: Prism, a no-login dataset-backed dashboard studio. Django + SQLite default, React/TypeScript/Vite. No external database, paid API or queue.
+Product: Stavatech Prism Dashboard, a no-login dataset-backed dashboard studio. Django + SQLite default, React/TypeScript/Vite. No external database, paid API or queue.
 
 ## Shared Python modules
 `backend/studio/ingestion.py`: `inspect_source(filename: str, content: bytes, options: dict | None = None) -> dict` returns {tables:[{key,name,columns:[str],rows:[dict]}],warnings:[str]}; `fetch_sheet(url: str) -> (filename,bytes)` secure Google Sheets CSV access only. Source import size cap 25 MB, max rows 100000. Throw ValueError for friendly errors. Need csv/json/xlsx/xls/pdf, no arbitrary URL requests.

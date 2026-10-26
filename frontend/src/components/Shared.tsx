@@ -2,8 +2,9 @@ import {useEffect,useRef,type ReactNode} from 'react';
 import {AlertCircle,BarChart3,Hash,Image as ImageIcon,Layers3,LayoutDashboard,LineChart,LoaderCircle,Minus,SlidersHorizontal,Table2,Type,X} from 'lucide-react';
 import {Link} from 'react-router-dom';
 import type {DashboardConfig} from '../types';
+import {APP_NAME,BrandMark,BrandWordmark} from './Brand';
 
-export function Logo(){return <Link className="brand" to="/"><span className="brand-mark"><svg width="24" height="26" viewBox="0 0 24 26" aria-hidden="true"><path d="M12 2 23 23H1Z" fill="currentColor"/><path d="m12 2 1 21h10Z" fill="white" opacity=".45"/></svg></span><span>prism<span className="brand-dot">.</span></span></Link>;}
+export function Logo(){return <Link className="brand" to="/" aria-label={`${APP_NAME} — workspace`}><span className="brand-mark"><BrandMark/></span><BrandWordmark/></Link>;}
 export function ErrorBox({error}:{error:string}){return error?<div className="error-box" role="alert"><AlertCircle size={18}/><span>{error}</span></div>:null;}
 export function Loading({text='Loading your workspace…'}:{text?:string}){return <div className="loading" role="status"><LoaderCircle className="spin" size={24}/><span>{text}</span></div>;}
 export function Empty({icon=<Layers3 size={28}/>,title,children,action}:{icon?:ReactNode;title:string;children?:ReactNode;action?:ReactNode}){return <div className="empty-state"><span className="empty-icon">{icon}</span><h3>{title}</h3><p>{children}</p>{action}</div>;}

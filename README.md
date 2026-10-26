@@ -1,6 +1,6 @@
-# Prism Dashboard Studio
+# Stavatech Prism Dashboard
 
-Prism turns uploaded business data into editable, interactive dashboards. It combines a Django backend, a React/TypeScript editor, Plotly visualizations, and SQLite persistence. No account, external database, Redis, paid AI service, or Docker installation is required.
+Stavatech Prism Dashboard turns uploaded business data into editable, interactive dashboards. It combines a Django backend, a React/TypeScript editor, Plotly visualizations, and SQLite persistence. No account, external database, Redis, paid AI service, or Docker installation is required.
 
 The application starts with an empty workspace. All analytical results come from datasets you import. Files in `sample_data/` are explicitly synthetic examples for trying the workflow; they are never substituted for uploaded data or automatically published.
 

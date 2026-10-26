@@ -14,3 +14,16 @@
 
 /* Readable secondary copy, including on high-resolution displays. */
 .page-heading p{color:#6d7765}.muted,.workspace-empty p,.empty-footnote{color:#77846a}.template-body p,.template-title-row p,.dashboard-card-body p{color:#7a896b}.import-guide p,.security-caption{color:#7b8b6b}.field{color:#697b5b}.sidebar nav>a{color:#68785d}.sidebar nav>a.active{color:#284e35}
+
+/* Stavatech's wordmark keeps the full name readable within the navigation rail. */
+.prism-brand-artwork{display:block;object-fit:contain;width:100%;height:100%;border-radius:inherit}
+.brand{width:100%;margin-left:0;padding:0 4px;gap:11px;letter-spacing:normal;align-items:center}
+.brand-mark{width:47px;height:47px;flex:0 0 47px;border-radius:14px;background:transparent;box-shadow:0 3px 8px #174c4010}
+.brand-wordmark{display:flex;min-width:0;flex-direction:column;gap:5px;line-height:1;letter-spacing:normal;white-space:nowrap}
+.brand-company{font-size:9px;font-weight:650;letter-spacing:2.15px;line-height:1.15;text-transform:uppercase;opacity:.72}
+.brand-product{display:flex;align-items:baseline;gap:6px;font-family:Georgia,'Times New Roman',serif;font-size:25px;font-weight:400;letter-spacing:-.7px;line-height:1.1}
+.brand-product>span{font-family:Inter,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:8px;font-weight:550;letter-spacing:.65px;text-transform:uppercase;opacity:.8}
+.brand-wordmark.is-compact{gap:4px}.brand-wordmark.is-compact .brand-company{font-size:8px;letter-spacing:1.75px}.brand-wordmark.is-compact .brand-product{font-size:21px;gap:5px}.brand-wordmark.is-compact .brand-product>span{font-size:7px;letter-spacing:.55px}
+.sidebar-version{gap:6px;letter-spacing:1px;font-size:7px}.sidebar-version>span{letter-spacing:.5px;font-size:6px;white-space:nowrap}
+@media(min-width:721px) and (max-width:1200px){.brand{gap:8px;padding:0 2px}.brand-mark{width:40px;height:40px;flex-basis:40px;border-radius:12px}.brand-product{font-size:23px;gap:5px}.brand-product>span{font-size:7px;letter-spacing:.45px}.brand-company{font-size:8px;letter-spacing:1.8px}}
+@media(max-width:720px){.mobile-nav-toggle.is-open{left:206px;top:8px;padding:4px;background:transparent}}

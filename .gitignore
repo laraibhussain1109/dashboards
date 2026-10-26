@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+*.sqlite3
+.env
+media/
+staticfiles/
+frontend/node_modules/
+frontend/dist/
+frontend/test-results/
+frontend/playwright-report/
+.pytest_cache/
+.DS_Store
+.local/
+*.tsbuildinfo

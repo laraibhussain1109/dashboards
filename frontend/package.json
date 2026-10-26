@@ -1,0 +1,34 @@
+{
+  "name": "prism-dashboard-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc -b && vite build",
+    "test:e2e": "playwright test",
+    "test:charts": "node tests/chart-renderer.mjs",
+    "test:workspace": "node tests/workspace-management.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "plotly.js-dist-min": "^3.1.2",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-grid-layout": "1.5.4",
+    "react-plotly.js": "^2.6.0",
+    "react-resizable": "^3.0.5",
+    "react-router-dom": "^7.9.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "@types/plotly.js": "^3.0.7",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@types/react-grid-layout": "^1.3.5",
+    "@types/react-plotly.js": "^2.6.3",
+    "@vitejs/plugin-react": "^5.0.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.12"
+  }
+}

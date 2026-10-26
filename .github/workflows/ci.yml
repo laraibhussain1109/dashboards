@@ -1,0 +1,53 @@
+name: Application checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Install Python dependencies and validate SQLite
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install -r requirements.txt
+          .venv/bin/python backend/manage.py migrate --noinput
+          .venv/bin/python backend/manage.py check
+          .venv/bin/python backend/manage.py makemigrations --check --dry-run
+          .venv/bin/python backend/manage.py test studio --noinput
+      - name: Build frontend and check real chart geometry
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run build
+          npm run test:charts
+          npx playwright install --with-deps chromium
+      - name: Test browser workflows
+        working-directory: frontend
+        run: |
+          export CHROMIUM_PATH="$(node -e "process.stdout.write(require('@playwright/test').chromium.executablePath())")"
+          ../.venv/bin/python ../backend/manage.py runserver 127.0.0.1:8000 --noreload > /tmp/prism-django.log 2>&1 &
+          npm run dev -- --port 5173 > /tmp/prism-vite.log 2>&1 &
+          for attempt in {1..30}; do
+            if curl --fail --silent http://127.0.0.1:8000/api/health/ && curl --fail --silent --output /dev/null http://127.0.0.1:5173/; then break; fi
+            sleep 1
+          done
+          npm run test:e2e
+          npm run test:workspace
+      - name: Retain browser failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: browser-failure-diagnostics
+          path: frontend/test-results/
+          retention-days: 7

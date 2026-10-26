@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'./tests',testMatch:'**/journey.spec.ts',fullyParallel:false,workers:1,retries:0,timeout:120000,expect:{timeout:15000},reporter:'list',use:{actionTimeout:15000,navigationTimeout:20000,baseURL:process.env.PRISM_TEST_URL||'http://127.0.0.1:5173',viewport:{width:1920,height:1200},headless:true,launchOptions:{executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',args:['--no-sandbox','--disable-dev-shm-usage']},trace:'retain-on-failure',screenshot:'only-on-failure'}});
